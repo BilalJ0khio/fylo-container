@@ -1,0 +1,214 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 62.5%;
+  /* // 10px */
+
+  --pale-blue: hsl(243, 100%, 93%);
+  --grayish-blue: hsl(229, 7%, 55%);
+  --darkblue: hsl(228, 56%, 26%);
+  --very-darkblue: hsl(229, 57%, 11%);
+}
+
+body {
+  /* background-color: black; */
+  color: hsl(0, 0%, 90%);
+  font-size: 1.4rem;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(30, 30, 126, 0.988);
+  background-image: url("images/bg-mobile.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+}
+
+.fylo-container {
+  padding: 2rem;
+  max-width: 400px;
+}
+.fylo-document-container {
+  /* border: 1px solid white; */
+  background-color: var(--darkblue);
+  padding: 4rem;
+  border-radius: 4% 30% 4% 4% / 4% 65% 4% 4%;
+  margin-bottom: 2rem;
+  /* border: 1px solid white; */
+}
+
+.fylo-document {
+  display: flex;
+
+  /* border: 1px solid white; */
+
+  gap: 1.6rem;
+  align-items: center;
+}
+.fylo-logo-container {
+  margin-bottom: 3rem;
+}
+
+.fylo-document figure {
+  /* border: 1px solid white; */
+  /* padding: 1.2rem; */
+  width: 4.7rem;
+  height: 4.7rem;
+  border-radius: 0.5em;
+  background-color: var(--very-darkblue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*  */
+.font-weight {
+  font-weight: 600;
+}
+.fylo-storage-container {
+  background-color: var(--darkblue);
+  padding: 4rem;
+  border-radius: 10px;
+  /* border: 1px solid white; */
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.fylo-storage-container::before {
+  content: "";
+}
+
+.fylo-storage-text {
+  margin-bottom: 1rem;
+  text-align: center;
+  /* border: 1px solid white; */
+  color: var(--pale-blue);
+}
+.fylo-storage-line {
+  /* border: 1px solid white; */
+  border-radius: 99999px;
+  background-color: hsl(228, 46%, 16%);
+}
+
+.fylo-storage-line div {
+  padding: 0.9rem;
+  border-radius: 9999px;
+  background-image: linear-gradient(
+    to right,
+    hsl(6, 100%, 80%),
+    hsl(335, 100%, 65%)
+  );
+  width: 70%;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.fylo-storage-line div::after {
+  content: "";
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(-20%, -50%);
+  background-color: #fff;
+  border-radius: 50%;
+}
+.fylo-minmax-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  color: var(--pale-blue);
+  font-weight: 500;
+}
+
+.fylo-gb-left {
+  padding: 1rem;
+  /* border: 1px solid white; */
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  /* background-color: var(--pale-blue); */
+  background-color: hsl(0, 0%, 100%);
+  color: var(--grayish-blue);
+  border-radius: 10px;
+  font-weight: 700;
+}
+.number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: black;
+}
+/* media query */
+@media only screen and (min-width: 56.25em) {
+  main {
+    /* justify-content: stretch; */
+    background-image: url("images/bg-desktop.png");
+    background-position: center;
+    /* background-size: cover; */
+
+    display: block;
+  }
+  .fylo-container {
+    max-width: none;
+    /* border: 1px solid white; */
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2rem;
+  }
+
+  .fylo-document-container {
+    display: inline-block;
+
+    width: 370px;
+  }
+  .fylo-storage-container {
+    display: inline-block;
+    width: 500px;
+  }
+  .fylo-gb-left {
+    bottom: 90%;
+    left: initial;
+    right: 2rem;
+    transform: none;
+  }
+  .fylo-gb-left::after {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+
+    transform: translateY(50%);
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent;
+    border-right-color: white;
+  }
+}
